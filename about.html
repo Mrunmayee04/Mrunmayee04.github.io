@@ -15,6 +15,90 @@
   <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
+  <style>
+  .skills-category {
+    color: var(--heading-color, #fff);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 2rem 0 1rem 0;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--accent-color, #27ae60);
+    display: inline-block;
+  }
+ 
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 1rem;
+  }
+ 
+  .skills-box {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: default;
+    transition: border-color 0.3s;
+  }
+ 
+  .skills-box:hover {
+    border-color: var(--accent-color, #27ae60);
+  }
+ 
+  .skills-box img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    filter: grayscale(20%);
+  }
+ 
+  .skills-box-icon i {
+    font-size: 2.2rem;
+    color: rgba(255,255,255,0.75);
+  }
+ 
+  .skills-layer {
+    position: absolute;
+    inset: 0;
+    background: rgba(39, 174, 96, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+  }
+ 
+  .skills-layer h4 {
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    padding: 4px;
+  }
+ 
+  .skills-box:hover .skills-layer {
+    opacity: 1;
+  }
+ 
+  @media (max-width: 576px) {
+    .skills-box { width: 75px; height: 75px; }
+    .skills-box img { width: 38px; height: 38px; }
+    .skills-box-icon i { font-size: 1.8rem; }
+  }
+</style>
+ 
+ 
 </head>
 <body class="about-page">
   <header id="header" class="header d-flex align-items-center fixed-top">
@@ -61,9 +145,6 @@
     <section id="about" class="about section">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="img/profile-img.jpg" class="img-fluid" alt="Mrunmayee Labde">
-          </div>
           <div class="col-lg-8 content">
             <h2>Business Intelligence Analyst &amp; Data Engineer</h2>
             <p class="fst-italic py-3">
@@ -130,81 +211,222 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <div><span>My</span> <span class="description-title">Technical Skills</span></div>
+<!-- =====================================================
+  STEP 2: Replace the entire Skills Section in about.html
+  with this block
+====================================================== -->
+<section id="skills" class="skills section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div><span>My</span> <span class="description-title">Technical Skills</span></div>
+  </div>
+ 
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+ 
+    <!-- BI & Visualization -->
+    <h4 class="skills-category">BI &amp; Visualization</h4>
+    <div class="skills-container">
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-bar-chart-fill"></i>
+        <div class="skills-layer"><h4>Power BI</h4></div>
       </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row skills-content skills-animation">
-          <div class="col-lg-6">
-            <div class="progress">
-              <span class="skill"><span>Power BI</span> <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>SQL &amp; Advanced SQL Optimization</span> <i class="val">92%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>DAX &amp; Data Modeling</span> <i class="val">88%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>Azure Data Factory</span> <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>Tableau</span> <i class="val">82%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="progress">
-              <span class="skill"><span>Databricks &amp; ETL Pipelines</span> <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>Python (Pandas, NumPy, PySpark)</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>AWS (S3, Athena, Glue)</span> <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>SAP BW &amp; Data Warehousing</span> <i class="val">78%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>Machine Learning (XGBoost, Clustering, NLP)</span> <i class="val">72%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-grid-1x2-fill"></i>
+        <div class="skills-layer"><h4>Tableau</h4></div>
       </div>
-    </section>
-
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-layout-text-window"></i>
+        <div class="skills-layer"><h4>Dashboard Design</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-code-square"></i>
+        <div class="skills-layer"><h4>DAX</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-lightning-fill"></i>
+        <div class="skills-layer"><h4>Power Query</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-file-earmark-spreadsheet"></i>
+        <div class="skills-layer"><h4>Advanced Excel</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-diagram-3-fill"></i>
+        <div class="skills-layer"><h4>Data Storytelling</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-graph-up-arrow"></i>
+        <div class="skills-layer"><h4>KPI Development</h4></div>
+      </div>
+    </div>
+ 
+    <!-- Data Engineering & Warehousing -->
+    <h4 class="skills-category">Data Engineering &amp; Warehousing</h4>
+    <div class="skills-container">
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-arrow-left-right"></i>
+        <div class="skills-layer"><h4>ETL Pipelines</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-cloud-arrow-up-fill"></i>
+        <div class="skills-layer"><h4>Azure Data Factory</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-fire"></i>
+        <div class="skills-layer"><h4>Databricks</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-cpu-fill"></i>
+        <div class="skills-layer"><h4>PySpark</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-box-seam"></i>
+        <div class="skills-layer"><h4>SAP BW</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-database-fill"></i>
+        <div class="skills-layer"><h4>Data Warehousing</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-star-fill"></i>
+        <div class="skills-layer"><h4>Star Schema</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-gear-fill"></i>
+        <div class="skills-layer"><h4>Data Modeling</h4></div>
+      </div>
+    </div>
+ 
+    <!-- Query & Programming Languages -->
+    <h4 class="skills-category">Query &amp; Programming Languages</h4>
+    <div class="skills-container">
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-table"></i>
+        <div class="skills-layer"><h4>SQL</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-search"></i>
+        <div class="skills-layer"><h4>Advanced SQL</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-filetype-py"></i>
+        <div class="skills-layer"><h4>Python</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-grid-3x3"></i>
+        <div class="skills-layer"><h4>Pandas</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-calculator-fill"></i>
+        <div class="skills-layer"><h4>NumPy</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-bar-chart-steps"></i>
+        <div class="skills-layer"><h4>Matplotlib</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-palette-fill"></i>
+        <div class="skills-layer"><h4>Seaborn</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-filetype-r"></i>
+        <div class="skills-layer"><h4>R</h4></div>
+      </div>
+    </div>
+ 
+    <!-- Cloud Platforms -->
+    <h4 class="skills-category">Cloud Platforms</h4>
+    <div class="skills-container">
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-microsoft"></i>
+        <div class="skills-layer"><h4>Microsoft Azure</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-cloud-fill"></i>
+        <div class="skills-layer"><h4>AWS S3</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-search-heart"></i>
+        <div class="skills-layer"><h4>AWS Athena</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-plugin"></i>
+        <div class="skills-layer"><h4>AWS Glue</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-hdd-network-fill"></i>
+        <div class="skills-layer"><h4>Distributed Processing</h4></div>
+      </div>
+    </div>
+ 
+    <!-- Machine Learning & AI -->
+    <h4 class="skills-category">Machine Learning &amp; AI</h4>
+    <div class="skills-container">
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-robot"></i>
+        <div class="skills-layer"><h4>Machine Learning</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-rocket-takeoff-fill"></i>
+        <div class="skills-layer"><h4>XGBoost</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-diagram-2-fill"></i>
+        <div class="skills-layer"><h4>Clustering</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-chat-dots-fill"></i>
+        <div class="skills-layer"><h4>NLP</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-tree-fill"></i>
+        <div class="skills-layer"><h4>Random Forest</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-wrench-adjustable-circle-fill"></i>
+        <div class="skills-layer"><h4>Feature Engineering</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-radioactive"></i>
+        <div class="skills-layer"><h4>Scikit-learn</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-graph-up"></i>
+        <div class="skills-layer"><h4>Regression</h4></div>
+      </div>
+    </div>
+ 
+    <!-- Tools & Collaboration -->
+    <h4 class="skills-category">Tools &amp; Collaboration</h4>
+    <div class="skills-container">
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-git"></i>
+        <div class="skills-layer"><h4>Git / GitHub</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-kanban-fill"></i>
+        <div class="skills-layer"><h4>JIRA</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-people-fill"></i>
+        <div class="skills-layer"><h4>Agile / Scrum</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-collection-fill"></i>
+        <div class="skills-layer"><h4>Stakeholder Mgmt</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-check2-square"></i>
+        <div class="skills-layer"><h4>Data Validation</h4></div>
+      </div>
+      <div class="skills-box skills-box-icon">
+        <i class="bi bi-book-fill"></i>
+        <div class="skills-layer"><h4>Documentation</h4></div>
+      </div>
+    </div>
+ 
+  </div>
+</section>
     <!-- Interests Section -->
     <section id="interests" class="interests section">
       <div class="container section-title" data-aos="fade-up">
@@ -269,7 +491,7 @@
   <footer id="footer" class="footer dark-background">
     <div class="container">
       <h3 class="sitename">Mrunmayee Labde</h3>
-      <p>Business Intelligence Analyst · Power BI · SQL · Azure · Databricks · Chicago, IL</p>
+      <p>Microsoft Excel · Power Bi · SQL · Azure · Databricks · Python  · Claude Code · N8N</p>
       <div class="social-links d-flex justify-content-center">
         <a href="https://www.linkedin.com/in/mrunmayee-labde/" target="_blank"><i class="bi bi-linkedin"></i></a>
         <a href="https://github.com/Mrunmayee04" target="_blank"><i class="bi bi-github"></i></a>
@@ -277,8 +499,6 @@
       </div>
       <div class="container">
         <div class="copyright"><span>Copyright</span> <strong class="px-1 sitename">Mrunmayee Labde</strong> <span>All Rights Reserved</span></div>
-        <div class="credits">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></div>
-      </div>
     </div>
   </footer>
 
