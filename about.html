@@ -15,12 +15,12 @@
   <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
-  <style>
+  
+<style>
   .skills-category {
-    color: var(--heading-color, #fff);
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     margin: 2rem 0 1rem 0;
     padding-bottom: 0.4rem;
@@ -31,70 +31,60 @@
   .skills-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
-    margin-bottom: 1rem;
+    gap: 12px;
+    margin-bottom: 0.5rem;
   }
  
   .skills-box {
     position: relative;
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    min-height: 100px;
     border-radius: 10px;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.1);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    gap: 8px;
+    padding: 10px 6px;
     cursor: default;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, background 0.3s, transform 0.2s;
   }
  
   .skills-box:hover {
     border-color: var(--accent-color, #27ae60);
+    background: rgba(39, 174, 96, 0.12);
+    transform: translateY(-3px);
   }
  
-  .skills-box img {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-    filter: grayscale(20%);
+  .skills-box i {
+    font-size: 2rem;
+    color: rgba(255,255,255,0.8);
+    transition: color 0.3s;
   }
  
-  .skills-box-icon i {
-    font-size: 2.2rem;
+  .skills-box:hover i {
+    color: var(--accent-color, #27ae60);
+  }
+ 
+  .skills-box .skill-name {
+    font-size: 0.67rem;
+    font-weight: 500;
     color: rgba(255,255,255,0.75);
-  }
- 
-  .skills-layer {
-    position: absolute;
-    inset: 0;
-    background: rgba(39, 174, 96, 0.92);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 10px;
-  }
- 
-  .skills-layer h4 {
-    color: #fff;
-    font-size: 0.72rem;
-    font-weight: 600;
     text-align: center;
-    margin: 0;
-    padding: 4px;
+    line-height: 1.2;
+    transition: color 0.3s;
   }
  
-  .skills-box:hover .skills-layer {
-    opacity: 1;
+  .skills-box:hover .skill-name {
+    color: #fff;
   }
  
   @media (max-width: 576px) {
-    .skills-box { width: 75px; height: 75px; }
-    .skills-box img { width: 38px; height: 38px; }
-    .skills-box-icon i { font-size: 1.8rem; }
+    .skills-box { width: 82px; min-height: 85px; }
+    .skills-box i { font-size: 1.6rem; }
+    .skills-box .skill-name { font-size: 0.6rem; }
   }
 </style>
  
@@ -211,10 +201,6 @@
     </section>
 
     <!-- Skills Section -->
-<!-- =====================================================
-  STEP 2: Replace the entire Skills Section in about.html
-  with this block
-====================================================== -->
 <section id="skills" class="skills section">
   <div class="container section-title" data-aos="fade-up">
     <h2>Skills</h2>
@@ -226,207 +212,208 @@
     <!-- BI & Visualization -->
     <h4 class="skills-category">BI &amp; Visualization</h4>
     <div class="skills-container">
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-bar-chart-fill"></i>
-        <div class="skills-layer"><h4>Power BI</h4></div>
+        <span class="skill-name">Power BI</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-grid-1x2-fill"></i>
-        <div class="skills-layer"><h4>Tableau</h4></div>
+        <span class="skill-name">Tableau</span>
       </div>
-      <div class="skills-box skills-box-icon">
-        <i class="bi bi-layout-text-window"></i>
-        <div class="skills-layer"><h4>Dashboard Design</h4></div>
-      </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-code-square"></i>
-        <div class="skills-layer"><h4>DAX</h4></div>
+        <span class="skill-name">DAX</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-lightning-fill"></i>
-        <div class="skills-layer"><h4>Power Query</h4></div>
+        <span class="skill-name">Power Query</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-file-earmark-spreadsheet"></i>
-        <div class="skills-layer"><h4>Advanced Excel</h4></div>
+        <span class="skill-name">Advanced Excel</span>
       </div>
-      <div class="skills-box skills-box-icon">
-        <i class="bi bi-diagram-3-fill"></i>
-        <div class="skills-layer"><h4>Data Storytelling</h4></div>
+      <div class="skills-box">
+        <i class="bi bi-layout-text-window"></i>
+        <span class="skill-name">Dashboard Design</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-graph-up-arrow"></i>
-        <div class="skills-layer"><h4>KPI Development</h4></div>
+        <span class="skill-name">KPI Development</span>
+      </div>
+      <div class="skills-box">
+        <i class="bi bi-diagram-3-fill"></i>
+        <span class="skill-name">Data Storytelling</span>
       </div>
     </div>
  
     <!-- Data Engineering & Warehousing -->
     <h4 class="skills-category">Data Engineering &amp; Warehousing</h4>
     <div class="skills-container">
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-arrow-left-right"></i>
-        <div class="skills-layer"><h4>ETL Pipelines</h4></div>
+        <span class="skill-name">ETL Pipelines</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-cloud-arrow-up-fill"></i>
-        <div class="skills-layer"><h4>Azure Data Factory</h4></div>
+        <span class="skill-name">Azure Data Factory</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-fire"></i>
-        <div class="skills-layer"><h4>Databricks</h4></div>
+        <span class="skill-name">Databricks</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-cpu-fill"></i>
-        <div class="skills-layer"><h4>PySpark</h4></div>
+        <span class="skill-name">PySpark</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-box-seam"></i>
-        <div class="skills-layer"><h4>SAP BW</h4></div>
+        <span class="skill-name">SAP BW</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-database-fill"></i>
-        <div class="skills-layer"><h4>Data Warehousing</h4></div>
+        <span class="skill-name">Data Warehousing</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-star-fill"></i>
-        <div class="skills-layer"><h4>Star Schema</h4></div>
+        <span class="skill-name">Star Schema</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-gear-fill"></i>
-        <div class="skills-layer"><h4>Data Modeling</h4></div>
+        <span class="skill-name">Data Modeling</span>
       </div>
     </div>
  
     <!-- Query & Programming Languages -->
     <h4 class="skills-category">Query &amp; Programming Languages</h4>
     <div class="skills-container">
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-table"></i>
-        <div class="skills-layer"><h4>SQL</h4></div>
+        <span class="skill-name">SQL</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-search"></i>
-        <div class="skills-layer"><h4>Advanced SQL</h4></div>
+        <span class="skill-name">Advanced SQL</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-filetype-py"></i>
-        <div class="skills-layer"><h4>Python</h4></div>
+        <span class="skill-name">Python</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-grid-3x3"></i>
-        <div class="skills-layer"><h4>Pandas</h4></div>
+        <span class="skill-name">Pandas</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-calculator-fill"></i>
-        <div class="skills-layer"><h4>NumPy</h4></div>
+        <span class="skill-name">NumPy</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-bar-chart-steps"></i>
-        <div class="skills-layer"><h4>Matplotlib</h4></div>
+        <span class="skill-name">Matplotlib</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-palette-fill"></i>
-        <div class="skills-layer"><h4>Seaborn</h4></div>
+        <span class="skill-name">Seaborn</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-filetype-r"></i>
-        <div class="skills-layer"><h4>R</h4></div>
+        <span class="skill-name">R</span>
       </div>
     </div>
  
     <!-- Cloud Platforms -->
     <h4 class="skills-category">Cloud Platforms</h4>
     <div class="skills-container">
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-microsoft"></i>
-        <div class="skills-layer"><h4>Microsoft Azure</h4></div>
+        <span class="skill-name">Microsoft Azure</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-cloud-fill"></i>
-        <div class="skills-layer"><h4>AWS S3</h4></div>
+        <span class="skill-name">AWS S3</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-search-heart"></i>
-        <div class="skills-layer"><h4>AWS Athena</h4></div>
+        <span class="skill-name">AWS Athena</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-plugin"></i>
-        <div class="skills-layer"><h4>AWS Glue</h4></div>
+        <span class="skill-name">AWS Glue</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-hdd-network-fill"></i>
-        <div class="skills-layer"><h4>Distributed Processing</h4></div>
+        <span class="skill-name">Distributed Processing</span>
       </div>
     </div>
  
     <!-- Machine Learning & AI -->
     <h4 class="skills-category">Machine Learning &amp; AI</h4>
     <div class="skills-container">
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-robot"></i>
-        <div class="skills-layer"><h4>Machine Learning</h4></div>
+        <span class="skill-name">Machine Learning</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-rocket-takeoff-fill"></i>
-        <div class="skills-layer"><h4>XGBoost</h4></div>
+        <span class="skill-name">XGBoost</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-diagram-2-fill"></i>
-        <div class="skills-layer"><h4>Clustering</h4></div>
+        <span class="skill-name">Clustering</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-chat-dots-fill"></i>
-        <div class="skills-layer"><h4>NLP</h4></div>
+        <span class="skill-name">NLP</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-tree-fill"></i>
-        <div class="skills-layer"><h4>Random Forest</h4></div>
+        <span class="skill-name">Random Forest</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-wrench-adjustable-circle-fill"></i>
-        <div class="skills-layer"><h4>Feature Engineering</h4></div>
+        <span class="skill-name">Feature Engineering</span>
       </div>
-      <div class="skills-box skills-box-icon">
-        <i class="bi bi-radioactive"></i>
-        <div class="skills-layer"><h4>Scikit-learn</h4></div>
+      <div class="skills-box">
+        <i class="bi bi-activity"></i>
+        <span class="skill-name">Scikit-learn</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-graph-up"></i>
-        <div class="skills-layer"><h4>Regression</h4></div>
+        <span class="skill-name">Regression</span>
       </div>
     </div>
  
     <!-- Tools & Collaboration -->
     <h4 class="skills-category">Tools &amp; Collaboration</h4>
     <div class="skills-container">
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-git"></i>
-        <div class="skills-layer"><h4>Git / GitHub</h4></div>
+        <span class="skill-name">Git / GitHub</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-kanban-fill"></i>
-        <div class="skills-layer"><h4>JIRA</h4></div>
+        <span class="skill-name">JIRA</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-people-fill"></i>
-        <div class="skills-layer"><h4>Agile / Scrum</h4></div>
+        <span class="skill-name">Agile / Scrum</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-collection-fill"></i>
-        <div class="skills-layer"><h4>Stakeholder Mgmt</h4></div>
+        <span class="skill-name">Stakeholder Mgmt</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-check2-square"></i>
-        <div class="skills-layer"><h4>Data Validation</h4></div>
+        <span class="skill-name">Data Validation</span>
       </div>
-      <div class="skills-box skills-box-icon">
+      <div class="skills-box">
         <i class="bi bi-book-fill"></i>
-        <div class="skills-layer"><h4>Documentation</h4></div>
+        <span class="skill-name">Documentation</span>
       </div>
     </div>
  
   </div>
 </section>
+    
     <!-- Interests Section -->
     <section id="interests" class="interests section">
       <div class="container section-title" data-aos="fade-up">
