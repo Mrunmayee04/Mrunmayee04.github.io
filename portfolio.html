@@ -16,35 +16,63 @@
   <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
   <style>
+
+    /* ── 1. Reduce top padding of the page-title heading ── */
+    .page-title .heading {
+      padding: 40px 0 20px !important;
+    }
+
+    /* ── 2. Tighten breadcrumbs ── */
+    .page-title .breadcrumbs {
+      padding: 6px 0 !important;
+    }
+
+    /* ── 3. Reduce portfolio section top padding ── */
+    section#portfolio.portfolio.section {
+      padding-top: 20px !important;
+      padding-bottom: 40px !important;
+    }
+
+    /* ── 4. Tighten filter bar gap ── */
+    .portfolio-filters {
+      margin-bottom: 16px !important;
+    }
+
+    /* ── 5. Reduce image height so cards + titles fit without scrolling ── */
+    .portfolio-content img {
+      height: 200px !important;
+      object-fit: cover;
+      width: 100%;
+    }
+
     /* ── Always show project title below image ── */
     .portfolio-content {
       display: flex;
       flex-direction: column;
     }
 
-    /* Always-visible title bar below the image */
     .portfolio-title-bar {
       background: #1a1a1a;
-      padding: 12px 14px 10px;
+      padding: 10px 14px 8px;
       border-left: 3px solid var(--accent-color, #27ae60);
     }
 
     .portfolio-title-bar h4 {
       color: #fff;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 600;
-      margin: 0 0 4px 0;
+      margin: 0 0 3px 0;
       line-height: 1.3;
     }
 
     .portfolio-title-bar p {
       color: rgba(255,255,255,0.55);
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       margin: 0;
       line-height: 1.4;
     }
 
-    /* Keep hover overlay for action buttons only */
+    /* Hover overlay — buttons only */
     .portfolio-content .portfolio-info {
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -54,11 +82,21 @@
       opacity: 1;
     }
 
-    /* Hide h4 and p from the hover overlay since they're now in title bar */
     .portfolio-content .portfolio-info h4,
     .portfolio-content .portfolio-info p {
       display: none;
     }
+
+    /* ── 6. Shrink page-title h1 ── */
+    .page-title .heading h1 {
+      font-size: 2rem !important;
+      margin-bottom: 8px !important;
+    }
+
+    .page-title .heading p {
+      font-size: 0.9rem !important;
+    }
+
   </style>
 </head>
 <body class="portfolio-page">
@@ -107,27 +145,26 @@
 
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-ml">Machine Learning & AI </li>
+            <li data-filter=".filter-ml">Machine Learning &amp; AI</li>
             <li data-filter=".filter-de">Data Engineering</li>
             <li data-filter=".filter-bi">BI &amp; Analytics</li>
           </ul>
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-3 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
             <!-- Project 1: Bank Product Recommendation System -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ml">
               <div class="portfolio-content h-100">
                 <img src="img/portfolio/portfolio-1.webp" class="img-fluid" alt="Bank Product Recommendation System">
-                <!-- Hover overlay — buttons only -->
                 <div class="portfolio-info">
                   <h4>Bank Product Recommendation System</h4>
-                  <p>XGBoost &middot; K-Medoids Clustering &middot; RFM Segmentation &middot; 13M+ Records &middot; &euro;15.6M Projected Profit</p>
+                  <p>placeholder</p>
                   <a href="img/portfolio/portfolio-1.webp" title="Bank Product Recommendation System" data-gallery="portfolio-gallery-ml" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Mrunmayee04/Banking-Product-Recommendation-System" title="View on GitHub" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
                 </div>
-                <!-- Always-visible title bar -->
                 <div class="portfolio-title-bar">
                   <h4>Bank Product Recommendation System</h4>
+                  <p>XGBoost &middot; K-Medoids Clustering &middot; RFM Segmentation &middot; 13M+ Records &middot; &euro;15.6M Projected Profit</p>
                 </div>
               </div>
             </div>
@@ -138,12 +175,13 @@
                 <img src="img/portfolio/portfolio-2.webp" class="img-fluid" alt="YouTube Trend Analysis">
                 <div class="portfolio-info">
                   <h4>YouTube Trend Analysis</h4>
-                  <p>PySpark &middot; AWS S3 &middot; Athena &middot; 3.7M Records &middot; 70% Query Latency Reduction</p>
+                  <p>placeholder</p>
                   <a href="img/portfolio/portfolio-2.webp" title="YouTube Trend Analysis" data-gallery="portfolio-gallery-de" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Mrunmayee04" title="View on GitHub" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
                 </div>
                 <div class="portfolio-title-bar">
                   <h4>YouTube Trend Analysis</h4>
+                  <p>PySpark &middot; AWS S3 &middot; Athena &middot; 3.7M Records &middot; 70% Query Latency Reduction</p>
                 </div>
               </div>
             </div>
@@ -154,12 +192,13 @@
                 <img src="img/portfolio/portfolio-3.webp" class="img-fluid" alt="Bank Loan Report">
                 <div class="portfolio-info">
                   <h4>Bank Loan Report</h4>
-                  <p>Power BI &middot; SQL &middot; Python &middot; KPI Dashboard &middot; 38.6K Records &middot; $435.8M Loan Portfolio </p>
+                  <p>placeholder</p>
                   <a href="img/portfolio/portfolio-3.webp" title="Bank Loan Report" data-gallery="portfolio-gallery-bi" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Mrunmayee04/Bank-Loan-Report" title="View on GitHub" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
                 </div>
                 <div class="portfolio-title-bar">
                   <h4>Bank Loan Report</h4>
+                  <p>Power BI &middot; SQL &middot; Python &middot; 38.6K Records &middot; $435.8M Loan Portfolio &middot; KPI Dashboard</p>
                 </div>
               </div>
             </div>
