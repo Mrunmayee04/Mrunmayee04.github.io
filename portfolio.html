@@ -15,24 +15,71 @@
   <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
+  <style>
+    /* ── Always show project title below image ── */
+    .portfolio-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Always-visible title bar below the image */
+    .portfolio-title-bar {
+      background: #1a1a1a;
+      padding: 12px 14px 10px;
+      border-left: 3px solid var(--accent-color, #27ae60);
+    }
+
+    .portfolio-title-bar h4 {
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0 0 4px 0;
+      line-height: 1.3;
+    }
+
+    .portfolio-title-bar p {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.72rem;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* Keep hover overlay for action buttons only */
+    .portfolio-content .portfolio-info {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .portfolio-content:hover .portfolio-info {
+      opacity: 1;
+    }
+
+    /* Hide h4 and p from the hover overlay since they're now in title bar */
+    .portfolio-content .portfolio-info h4,
+    .portfolio-content .portfolio-info p {
+      display: none;
+    }
+  </style>
 </head>
 <body class="portfolio-page">
-<header id="header" class="header d-flex align-items-center fixed-top">
-  <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="portfolio.html" class="active">Portfolio</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-    </nav>
-  </div>
-</header>
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="portfolio.html" class="active">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
 
   <main class="main">
+
     <div class="page-title" data-aos="fade">
       <div class="heading">
         <div class="container">
@@ -57,6 +104,7 @@
     <section id="portfolio" class="portfolio section">
       <div class="container">
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
             <li data-filter=".filter-ml">Machine Learning</li>
@@ -66,38 +114,55 @@
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
+            <!-- Project 1: Bank Product Recommendation System -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-ml">
               <div class="portfolio-content h-100">
                 <img src="img/portfolio/portfolio-1.webp" class="img-fluid" alt="Bank Product Recommendation System">
+                <!-- Hover overlay — buttons only -->
                 <div class="portfolio-info">
                   <h4>Bank Product Recommendation System</h4>
-                  <p>XGBoost · K-Medoids Clustering · RFM Segmentation · 13M+ Records · €15.6M Projected Profit</p>
+                  <p>placeholder</p>
                   <a href="img/portfolio/portfolio-1.webp" title="Bank Product Recommendation System" data-gallery="portfolio-gallery-ml" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="https://github.com/Mrunmayee04" title="View on GitHub" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                  <a href="https://github.com/Mrunmayee04/Banking-Product-Recommendation-System" title="View on GitHub" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                </div>
+                <!-- Always-visible title bar -->
+                <div class="portfolio-title-bar">
+                  <h4>Bank Product Recommendation System</h4>
+                  <p>XGBoost &middot; K-Medoids Clustering &middot; RFM Segmentation &middot; 13M+ Records &middot; &euro;15.6M Projected Profit</p>
                 </div>
               </div>
             </div>
 
+            <!-- Project 2: YouTube Trend Analysis -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-de">
               <div class="portfolio-content h-100">
                 <img src="img/portfolio/portfolio-2.webp" class="img-fluid" alt="YouTube Trend Analysis">
                 <div class="portfolio-info">
                   <h4>YouTube Trend Analysis</h4>
-                  <p>PySpark · AWS S3 · Athena · 3.7M Records · 70% Query Latency Reduction</p>
+                  <p>placeholder</p>
                   <a href="img/portfolio/portfolio-2.webp" title="YouTube Trend Analysis" data-gallery="portfolio-gallery-de" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Mrunmayee04" title="View on GitHub" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                </div>
+                <div class="portfolio-title-bar">
+                  <h4>YouTube Trend Analysis</h4>
+                  <p>PySpark &middot; AWS S3 &middot; Athena &middot; 3.7M Records &middot; 70% Query Latency Reduction</p>
                 </div>
               </div>
             </div>
 
+            <!-- Project 3: Hartford Enterprise BI Platform -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bi">
               <div class="portfolio-content h-100">
                 <img src="img/portfolio/portfolio-3.webp" class="img-fluid" alt="Hartford Enterprise BI Platform">
                 <div class="portfolio-info">
                   <h4>Hartford Enterprise BI Platform</h4>
-                  <p>Power BI · Azure Data Factory · Databricks · 5TB+ Daily · 200+ Users</p>
+                  <p>placeholder</p>
                   <a href="img/portfolio/portfolio-3.webp" title="Hartford Enterprise BI Platform" data-gallery="portfolio-gallery-bi" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Mrunmayee04" title="View on GitHub" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                </div>
+                <div class="portfolio-title-bar">
+                  <h4>Hartford Enterprise BI Platform</h4>
+                  <p>Power BI &middot; Azure Data Factory &middot; Databricks &middot; 5TB+ Daily &middot; 200+ Users</p>
                 </div>
               </div>
             </div>
@@ -106,19 +171,22 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer id="footer" class="footer dark-background">
     <div class="container">
       <h3 class="sitename">Mrunmayee Labde</h3>
-      <p>Let’s Build Scalable Enterprise Solutions Through Modern BI & AI</p>
+      <p>Let's Build Scalable Enterprise Solutions Through Modern BI &amp; AI</p>
       <div class="social-links d-flex justify-content-center">
         <a href="https://www.linkedin.com/in/mrunmayee-labde/" target="_blank"><i class="bi bi-linkedin"></i></a>
         <a href="https://github.com/Mrunmayee04" target="_blank"><i class="bi bi-github"></i></a>
         <a href="mailto:mlabde06@gmail.com"><i class="bi bi-envelope"></i></a>
       </div>
       <div class="container">
-        <div class="copyright"><span>Copyright</span> <strong class="px-1 sitename">Mrunmayee Labde</strong> <span>All Rights Reserved</span></div>
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">Mrunmayee Labde</strong> <span>All Rights Reserved</span>
+        </div>
       </div>
     </div>
   </footer>
